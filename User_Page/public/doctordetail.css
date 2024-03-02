@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #e0e0e0, #f9f9f9);
+
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  width: 600px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Hide overflow to prevent shadow clipping */
+}
+.picture {
+  text-align: center;
+  padding-top: 30px;
+}
+.picture i {
+  color: #25274d;
+  font-size: 10rem;
+}
+.details {
+  padding: 20px;
+  text-align: center;
+}
+.details h1 {
+  margin-bottom: 10px;
+  color: #25274d;
+}
+.details h2 {
+  margin-top: 20px;
+  color: #333;
+}
+.btn {
+  margin-top: 40px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  background-color: #1877F2;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: #0056b3;
+}
+.popupbox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: #fff;
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.popupbox.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.title {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+}
+.close-btn {
+  background: transparent;
+  color: #333;
+  border: none;
+  border-radius: 30%;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.close-btn:hover {
+  background-color: rgb(241, 65, 65);
+}
+form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+form input[type="date"],
+form input[type="time"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+.submit-btn {
+  width: 50%;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  background-color: #1877F2;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+#overlay {
+  position: fixed;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 5;
+}
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+

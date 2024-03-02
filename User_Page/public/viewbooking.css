@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.main {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+.heading {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.heading h1 {
+    color: #25274d;
+    margin: 0;
+}
+
+.heading a {
+    color: #25274d;
+    text-decoration: none;
+    margin-left: 50px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.heading a:hover {
+    color: #ea5455;
+}
+
+.main #line{
+    border: none;
+    border-top: 4px solid #000;
+    margin: 20px 0;
+}
+.appointment-item {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.doctorName {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007185;
+    margin-bottom: 10px;
+}
+.dateBook, .timeBook {
+    color: #555;
+    margin-bottom: 5px;
+}
+.appointment-actions {
+    margin-top: 15px;
+}
+.btn-cancel {
+    background-color: #2e9cca;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+}
+.btn-update {
+    background-color: #2e9cca;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+}
+ .btn-update:hover{
+    background-color: #1375a0;
+}
+.btn-cancel:hover{
+    background-color: crimson;
+}
+
+.popupbox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: #fff;
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .popupbox.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  .title {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+  }
+  .close-btn {
+    background: transparent;
+    color: #333;
+    border: none;
+    border-radius: 30%;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .close-btn:hover {
+    background-color: rgb(241, 65, 65);
+  }
+  form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+  }
+  form input[type="date"],
+  form input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 18px;
+  }
+  .submit-btn {
+    width: 50%;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    background-color: #1877F2;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  #overlay {
+    position: fixed;
+    transition: 200ms ease-in-out;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    z-index: 5;
+  }
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+
+ 

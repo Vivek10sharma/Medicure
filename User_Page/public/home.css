@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serifs;
+    overflow-x: hidden;
+
+}
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #25274d;
+    height: 70px;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav i{
+    height: 50px;
+    width: auto;
+    color: #fff;
+}
+.company{
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+.Nav-links{
+    display: flex;
+    justify-content: space-around;
+}
+.btn{
+    margin-top: 3px;
+    margin-right: 10px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    box-shadow: 2px 3px 2px black;
+    border-radius: 10%;
+    font-weight: bolder;
+    background-color: #2e9cca;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.btn:hover{
+    background-color: white;
+    color: black;
+}
+.body{
+    display: flex;
+    height: 100vh;
+    width: 100vw; 
+    background: #fff; 
+
+}
+.con-item{
+    display: flex;
+    flex-direction: column;
+}
+.contain{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    gap: 100px;
+    margin-left: 10px;
+}
+.contain h1{
+    font-size: 35px;
+    color: rgb(10, 9, 9);
+    margin-top: 30px;
+    text-align: center;
+
+}
+.contain h1 div{
+    font-size: 30px;
+    margin-left: 50px;
+   color: rgb(245, 50, 50);
+}
+.doctor img{
+    height: 350px;
+    width: 450px;
+    margin-top: 30px;
+}
+.main{
+    flex: 1;
+}
+.footer {
+    width: 100vw;
+    background-color: #25274d;
+    color: #fff;
+    padding: 40px 0;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.row {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.col {
+    flex: 1 1 20%;
+    margin-bottom: 30px;
+}
+
+.col h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.col p {
+    margin-bottom: 10px;
+    color: #ddd;
+}
+.col p i{
+    margin-right: 5px;
+}
+
+.f-logo {
+    height: 60px;
+    width: 80px;
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 85%; }
+}
+.typewriter-text {
+    overflow: hidden;
+    border-right: 2px solid #25274d;
+    white-space: nowrap;
+    margin: 0 auto;
+    font-size: 50px;
+    letter-spacing: .15em;
+    animation: typing 2s steps(30, end), blink-caret .75s step-end infinite;
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #25274d; }
+}
+

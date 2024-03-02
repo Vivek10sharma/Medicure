@@ -1,0 +1,74 @@
+<link href="https://fonts.googleapis.com/css2?family=
+Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,
+400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/static/about.css">
+<section class="main">
+    <div class="heading">
+        <h1>About Us</h1>
+    </div>
+    <div class="container">
+        <div class="main-content">
+            <h2>Welcome To Medicure</h2>
+            <p>Medicure is a web-based platform revolutionizing the way individuals 
+                schedule medical appointments with doctors. With Medicure, users can 
+                easily and conveniently book appointments with healthcare professionals
+                online, eliminating the hassle of waiting on hold or navigating through 
+                complex phone systems. <span class="moreText"> The platform offers a user-friendly 
+                interface that allows patients to search for doctors by specialty, location, and availability,
+                ensuring they find the right healthcare provider to meet their needs. 
+                Additionally, Medicure provides comprehensive profiles of each doctor, 
+                including qualifications,specialties, and patient reviews, empowering users
+                 to make informed decisions about their healthcare.</span>
+            </p>
+            <button class="btn">Read More</button>
+        </div>
+        <div class="main-image">
+            <img src="/static/images/manworking.png">
+        </div>
+    </div>
+</section>
+ <footer class="footer">
+            <div class="row">
+                 <div class="col">
+                <i class="fa-solid fa-laptop-medical fa-4x f-logo"></i>
+                </div>
+                <div class="col">
+                    <h3 style="margin-bottom: 5px;">Contact Information:</h3>
+                        <p>Medicure</p>
+                        <p>Murgiya,Rupandehi</p>
+                        <p>9812345670</p>
+                        <p>helpmedicure@gmail.com</p>
+                    </div>
+                <div class="col">
+                    <h3 style="margin-bottom: 5px;">Social Media:</h3>
+                    <p><i class="fa-brands fa-facebook"></i>Facebook</p>
+                    <p><i class="fa-brands fa-twitter"></i>Twitter</p>
+                    <p><i class="fa-brands fa-linkedin"></i>Linkedin</p>
+                    <p><i class="fa-brands fa-instagram"></i>Instragram</p>
+                </div>
+                <div class="col">
+                  <h3 style="margin-bottom: 5px;">Dashboard:</h3> 
+                  <p><a href="/dashboard">Home</a></p> 
+                  <p><a href="/booking">Booking</a></p> 
+                  {{!-- <p><a href="/about">About</a></p>  --}}
+                  <p><a href="/contact">Contact</a></p> 
+                </div>
+               
+            </div>
+        </footer>  
+
+<script>
+const buttons = document.getElementsByClassName('btn')[0];
+const text = document.getElementsByClassName('moreText')[0]; 
+
+buttons.addEventListener('click', () => {
+    if (text.style.display === 'none' || text.style.display === '') {
+        text.style.display = 'inline'; 
+        buttons.textContent = 'Read Less'; 
+    } else {
+        text.style.display = 'none';
+        buttons.textContent = 'Read More';
+    }
+});
+</script>

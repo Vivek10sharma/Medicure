@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serifs;
+    overflow-x: hidden;
+}
+.main{
+    height: 100vh;
+    text-align: center;
+    background-color: #eef8fe;
+}
+.heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.heading h1{
+    color: #1877F2;
+    font-size: 55px;
+    text-align: center;
+    margin-top: 35px;
+}
+.heading p{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+    margin-top: 30px;
+}
+.contactInfo h1{
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #333;
+}
+.contactInfo p{
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 24px;
+}
+.contactInfo p i{
+    color: #1877F2;
+    margin-right: 10px;
+}
+.main{
+    flex: 1;
+}
+.footer {
+    width: 100vw;
+    background-color: #25274d;
+    color: #fff;
+    padding: 40px 0;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.row {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.col {
+    flex: 1 1 20%;
+    margin-bottom: 30px;
+}
+
+.col h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.col p {
+    margin-bottom: 10px;
+    color: #ddd;
+}
+.col p i{
+    margin-right: 5px;
+}
+.col p a{
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+}
+.f-logo {
+    height: 60px;
+    width: 80px;
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+
+
+
+
+
+
+
+

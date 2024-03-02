@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serifs;
+    overflow-x: hidden;
+}
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #25274d;
+    height: 70px;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+nav i{
+    margin-top: 4px;
+    height: 50px;
+    width: auto;
+    color: #fff;
+}
+.btn{
+    display: inline-block; 
+    margin-top: 5px;
+    padding: 10px;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    box-shadow: 2px 3px 2px black;
+    border-radius: 10%;
+    font-weight: bolder;
+    background-color: #008080;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.btn:hover{
+    background-color: #fff;
+    color: black;
+}
+.Nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    margin-top: -25px;
+}
+.Nav-links li{
+    list-style: none;
+}
+.Nav-links li a{
+    text-decoration: none;
+    font-size: 23px;
+    color: #fff;
+    position: absolute;
+    font-weight: bolder;
+}
+.Nav-links li a:hover{
+    font-size: 20px;
+    color: rgb(240, 192, 104);
+    font-weight: bold;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+   
+}
+.body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 10px;
+    padding: 50px;
+}
+.body::before{
+    content: '';
+    height: 100vh;
+    width: 100vw; 
+     background-image: url("/static/images/Appointdoctor.jpg");
+     background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.3);
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.features {
+    margin-bottom: 50px;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.feature {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.feature i {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 16px;
+}
+
+.how-it-works {
+    margin-bottom: 50px;
+}
+
+.how-it-works h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 16px;
+}
+
+.main{
+    flex: 1;
+}
+
+.footer {
+    width: 100vw;
+    background-color: #25274d;
+    color: #fff;
+    padding: 40px 0;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.row {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.col {
+    flex: 1 1 20%;
+    margin-bottom: 30px;
+}
+
+.col h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.col p {
+    margin-bottom: 10px;
+    color: #ddd;
+}
+.col p i{
+    margin-right: 5px;
+}
+.f-logo {
+    height: 80px;
+    width: 90px;
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+
+
+
+

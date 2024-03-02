@@ -1,0 +1,87 @@
+<link href="https://fonts.googleapis.com/css2?family=
+Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,
+100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/static/doctordetail.css">
+<section class="main">
+        <div class="container">
+            <div class="picture">
+                <i class="fas fa-user-md fa-10x"></i>
+            </div>
+            <div class="details">
+                {{#if doctor}}
+                <h1>Dr. {{doctor.doctor_name}}</h1>
+                <h2>Specialty: {{doctor.specialization}}</h2>
+                <h2>Location: {{doctor.address}}</h2>
+                <h2>License: {{doctor.medical_license}}</h2>
+                <button class="btn" id="bookAppointmentBtn">Book Appointment</button>
+                {{/if}}
+            </div>
+        </div>
+        <div class="popupbox" id="popupBox">
+            <div class="heading">
+                <div class="title">Select Date and Time</div>
+                <button class="close-btn" id="closePopupBtn">X</button>
+            </div>
+            <form action="/path/viewbooking/{{doctor.doctor_id}}" method="POST">
+                <label for="date">Select Date:</label>
+                <input type="date" name="date" required>
+                <label for="time">Select Time:</label>
+                <input type="time" name="time" required>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+        <div id="overlay"></div>
+    </section>
+
+
+<script>
+  const openPopupbox = document.querySelector('.btn');
+  const closePopupbox = document.querySelector('.close-btn');
+  const overlay = document.getElementById('overlay');
+  const popup = document.querySelector('.popupbox');
+
+  openPopupbox.addEventListener('click', () => {
+    openPopup(popup);
+  });
+
+  closePopupbox.addEventListener('click', () => {
+    closePopup(popup);
+  });
+
+  function openPopup(popup) {
+    if (popup == null) {
+      return;
+    } else {
+      popup.classList.add('active');
+      overlay.classList.add('active');
+    }
+  }
+
+  function closePopup(popup) {
+    if (popup == null) {
+      return;
+    } else {
+      popup.classList.remove('active');
+      overlay.classList.remove('active');
+    }
+  }
+  // Disable previous dates in the date input field
+  const dateInput = document.querySelector('input[type="date"]');
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.setAttribute('min', today);
+
+  // Set the minimum time for the time input to the current time if it's today, else set it to midnight
+ const timeInput = document.querySelector('input[type="time"]');
+dateInput.addEventListener('change', function() {
+  const selectedDate = new Date(dateInput.value);
+  const now = new Date();
+
+  if (selectedDate.toDateString() === now.toDateString()) {
+    const minTime = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+    timeInput.setAttribute('min', minTime);
+  } else {
+    timeInput.setAttribute('min', '00:00');
+  }
+});
+</script>

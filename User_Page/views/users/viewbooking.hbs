@@ -1,0 +1,145 @@
+<link href="https://fonts.googleapis.com/css2?family=
+   Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1
+   ,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/viewbooking.css">
+<section class="main">
+    <div class="heading">
+        <h1>View Appointment</h1>
+        <a href="/dashboard">Go To Home Page</a>
+    </div>
+    <hr id="line">
+    <div class="appointment">
+        {{#each appointments}}
+        <div class="appointment-item">
+            <div class="appointment-info">
+                <div class="doctorName">Dr. {{doctorName}}</div>
+                <div class="dateBook">Date: {{Date}}</div>
+                <div class="timeBook">Time: {{Time}}</div>
+            </div>
+            <div class="appointment-actions">
+                <button class="btn-update" data-popup="{{@index}}">Update</button>
+                <button class="btn-cancel" id="cancelBtn_{{appointmentId}}">Cancel</button>
+            </div>
+        </div>
+       
+        <div class="popupbox" id="popupBox{{@index}}">
+            <div class="heading">
+                <div class="title">Select Date and Time</div>
+                <button class="close-btn">X</button>
+            </div>
+            <form action="/path/updatebooking/{{appointmentId}}" method="Post">
+                <label for="date">Select Date:</label>
+                <input type="date" name="updateDate" required>
+                <label for="time">Select Time:</label>
+                <input type="time" name="updateTime" required>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+        <div id="overlay"></div>
+        {{/each}}
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const overlay = document.getElementById('overlay');
+
+        // Open popup event
+        document.querySelectorAll('.btn-update').forEach(button => {
+            button.addEventListener('click', function () {
+                const popupIndex = button.getAttribute('data-popup');
+                const popup = document.getElementById('popupBox' + popupIndex);
+                openPopup(popup);
+            });
+        });
+
+        // Close popup event
+        document.querySelectorAll('.close-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const popup = button.closest('.popupbox');
+                closePopup(popup);
+            });
+        });
+
+        function openPopup(popup) {
+            if (popup == null) {
+                return;
+            } else {
+                popup.classList.add('active');
+                overlay.classList.add('active');
+            }
+        }
+
+        function closePopup(popup) {
+            if (popup == null) {
+                return;
+            } else {
+                popup.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        }
+
+        const dateInputs = document.querySelectorAll('input[type="date"]');
+const timeInputs = document.querySelectorAll('input[type="time"]');
+
+// Loop through each date input
+dateInputs.forEach(function(dateInput, index) {
+    const timeInput = timeInputs[index];
+
+    dateInput.addEventListener('change', function () {
+        const selectedDate = new Date(dateInput.value);
+        const now = new Date();
+
+        if (selectedDate.toDateString() === now.toDateString()) {
+            const minTime = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+            timeInput.setAttribute('min', minTime);
+        } else {
+            timeInput.setAttribute('min', '00:00');
+        }
+
+        // Disable previous dates in the date input
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        let mm = today.getMonth() + 1; // Months are zero indexed
+        let dd = today.getDate();
+
+        if (mm < 10) mm = '0' + mm;
+        if (dd < 10) dd = '0' + dd;
+
+        const minDate = yyyy + '-' + mm + '-' + dd;
+        dateInput.setAttribute('min', minDate);
+    });
+
+    // Trigger the change event once to initialize the state
+    dateInput.dispatchEvent(new Event('change'));
+});
+    });
+
+
+     document.addEventListener('DOMContentLoaded', ()=> {
+            let urlParams = new URLSearchParams(window.location.search);
+            let message = urlParams.get('message');
+    if (message) {
+        alert(message);
+       setTimeout(function() {
+      window.location.href = "/viewbooking";
+      
+    }, 100);
+    }
+  });
+
+
+// Delete appointment
+document.querySelectorAll('.btn-cancel').forEach(button => {
+    button.addEventListener('click', function() {
+        const appointmentId = button.id.split('_')[1];
+        console.log("Appointment ID:", appointmentId);
+        window.location.href = `deleteAppointment/${appointmentId}`;
+    });
+});
+
+
+
+
+
+</script>
