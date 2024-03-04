@@ -1,1 +1,1 @@
-initial stating project
+initial starting project
