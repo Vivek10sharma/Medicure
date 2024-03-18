@@ -21,13 +21,13 @@
                 <button class="btn-cancel" id="cancelBtn_{{appointmentId}}">Cancel</button>
             </div>
         </div>
-       
         <div class="popupbox" id="popupBox{{@index}}">
             <div class="heading">
                 <div class="title">Select Date and Time</div>
                 <button class="close-btn">X</button>
             </div>
             <form action="/path/updatebooking/{{appointmentId}}" method="Post">
+            <input type="hidden" id="appointmentIdInput" name="appointmentId">
                 <label for="date">Select Date:</label>
                 <input type="date" name="updateDate" required>
                 <label for="time">Select Time:</label>
@@ -128,7 +128,6 @@ dateInputs.forEach(function(dateInput, index) {
     }
   });
 
-
 // Delete appointment
 document.querySelectorAll('.btn-cancel').forEach(button => {
     button.addEventListener('click', function() {
@@ -137,9 +136,4 @@ document.querySelectorAll('.btn-cancel').forEach(button => {
         window.location.href = `deleteAppointment/${appointmentId}`;
     });
 });
-
-
-
-
-
 </script>

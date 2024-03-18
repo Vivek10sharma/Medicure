@@ -28,3 +28,48 @@ exports.login = (req,res) =>{
         }
     });
 }
+exports.updateAppointment = (req,res) =>{
+    const {appointmentId,updateDate,updateTime} = req.body;
+    // console.log(appointmentId,updateDate , updateTime);
+    const updateQuery = `UPDATE appointment SET date = ?, time = ? WHERE appointment_id = ?`;
+    connection.query(updateQuery, [updateDate, updateTime, appointmentId], (error, results) => {
+        if (error) {
+          console.error('Error updating appointment:', error);
+          return;
+        }
+        res.redirect('/appointment?message='+ encodeURIComponent('Appointment Update Successfully'));
+      });
+}
+
+exports.addDoctor = (req,res) =>{
+    const {DoctorName,contact,address,specialization,med_lis} = req.body;
+    // console.log(DoctorName,contact,address,specialization,med_lis);
+    connection.query('INSERT INTO doctor(doctor_name,contact,address,specialization,medical_license) VALUES(?,?,?,?,?)',[DoctorName,contact,address,specialization,med_lis],(error)=>{
+        if(error){
+            console.log(error);
+        }
+        res.redirect('/doctor?message='+ encodeURIComponent('Doctor Added Successfully'))
+    });
+}
+
+exports.editDoctor = (req, res) => {
+    const { doctorId, DoctorName, contact, address, specialization, med_lis } = req.body;
+    const updateDoctor = 'UPDATE doctor SET doctor_name = ?, contact = ?, address = ?, specialization = ?, medical_license = ? WHERE doctor_id = ?';
+    connection.query(updateDoctor, [DoctorName, contact, address, specialization, med_lis, doctorId], (error) => {
+        if (error) {
+            console.log(error);
+        }
+        res.redirect('/doctor?message=' + encodeURIComponent('Doctor Updated Successfully'));
+    });
+};
+
+exports.editPatient = (req,res) =>{
+    const { patientId, patientName, contact, username } = req.body;
+    const updatePatient = 'UPDATE patient SET full_name = ?, phone_number = ?, username = ? WHERE patient_id = ?';
+    connection.query(updatePatient, [patientName, contact, username, patientId], (error) => {
+        if (error) {
+            console.log(error);
+        }
+        res.redirect('/patient?message=' + encodeURIComponent('Patient Updated Successfully'));
+    });
+}
